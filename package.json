@@ -1,0 +1,25 @@
+{
+  "name": "gh-action-send-event",
+  "version": "1.0.0",
+  "description": "GH Action to send an event to a Keptn deployment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "all": "npm run prepare"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keptn/gh-action-send-event.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/keptn/gh-action-send-event/issues"
+  },
+  "homepage": "https://github.com/keptn/gh-action-send-event#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "node-fetch": "^2.6.1"
+  }
+}

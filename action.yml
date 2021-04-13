@@ -1,0 +1,15 @@
+name: 'Keptn Send Events'
+description: 'Sends Events to Keptn'
+inputs:
+  keptnApiUrl:
+    description: 'URL pointing to the keptn events API'
+    required: true
+  keptnApiToken: 
+    description: 'API Token to be used for sending the event'
+    required: true
+  event:
+    description: 'Keptn event type to send'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
