@@ -2,15 +2,20 @@
 
 GH Action to send an event to a Keptn deployment
 
-## Parameters
 
-### Input Paramters
+
+## Inputs
 | Name | Mandatory | Format | Description |
 |--|--|--|--|
 | keptnApiUrl | yes | url | URL pointing to the keptn events API (Example: http://example.nip.io/api/v1/event ) | 
 | keptnApiToken | yes | string | API Token to be used for sending the event |
 | event | yes | JSON | Event to be sent (See: [Keptn Cloud Events](https://www.google.com/search?q=keptn%20spec)) | 
-  
+
+## Outputs
+
+| Name | Description |
+|--|--|
+| keptnContext | The Keptn context bound to the sent event |
 
 ## Example Usage
 
@@ -57,7 +62,9 @@ jobs:
             "type": "sh.keptn.event.dev.delivery.triggered",
             "shkeptnspecversion": "0.2.1"
           }
+    - name: Print the Keptn Context
+      run: echo "The keptn context is ${{ steps.send-keptn-event.outputs.keptnContext }}"
 ```
 
-*Note that the fields `shkeptncontext`, `time` and `id` are omitted **on purpose** because these will be generated automatically
+*Note that the fields `shkeptncontext`, `time` and `id` in the event to be sent are omitted **on purpose** because these will be generated automatically
 by the API endpoint of Keptn.*
